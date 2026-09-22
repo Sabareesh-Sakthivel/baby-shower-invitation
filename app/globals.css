@@ -1,26 +1,172 @@
 @import "tailwindcss";
 
+/* Hallmark · genre: playful-editorial · theme: bespoke-baby-shower-romance */
+/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Paper & Canvas Tokens */
+  --color-paper: oklch(98.5% 0.012 85);         /* Creamy warm ivory */
+  --color-paper-card: oklch(99.4% 0.008 85);    /* Pure soft card surface */
+  --color-blush: oklch(96% 0.025 25);           /* Tender baby blush */
+  --color-blush-subtle: oklch(97.5% 0.015 25);  /* Faintest pink mist */
+  --color-blush-dark: oklch(91% 0.05 25);       /* Deep blush border/badge */
+  
+  /* Primary Romantic Accents */
+  --color-rose: oklch(50% 0.17 15);             /* Rich calligraphy rose */
+  --color-rose-deep: oklch(43% 0.18 15);        /* Deep rose for readable text */
+  --color-rose-light: oklch(86% 0.08 15);       /* Warm rose glow */
+  
+  /* Pastel Companion Accents */
+  --color-baby-blue: oklch(90% 0.055 230);      /* Soft powder sky blue */
+  --color-baby-blue-deep: oklch(62% 0.11 230);  /* Sky blue text/icon accent */
+  --color-sage: oklch(76% 0.07 135);            /* Delicate botanical leaf */
+  --color-sage-deep: oklch(50% 0.09 135);       /* Legible sage text */
+  --color-gold: oklch(74% 0.12 75);             /* Champagne gold foil */
+  --color-gold-deep: oklch(56% 0.13 75);        /* Gold metallic text/border */
+  
+  /* Ink & Typography Tokens */
+  --color-ink: oklch(25% 0.025 35);             /* Warm espresso charcoal */
+  --color-ink-muted: oklch(48% 0.025 35);       /* Warm muted secondary */
+  --color-ink-light: oklch(65% 0.02 35);        /* Subtle timestamp / caption */
+  --color-border-card: oklch(92% 0.02 50 / 0.7);/* Hairline soft border */
+  --color-border-gold: oklch(75% 0.11 75 / 0.4);/* Gold border highlight */
+  
+  /* Typography Variables */
+  --font-script: 'Great Vibes', cursive;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html, body {
+  overflow-x: clip;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Custom Typography Utilities */
+.font-script {
+  font-family: var(--font-script), cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-serif-cormorant {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.font-sans-clean {
+  font-family: var(--font-sans), sans-serif;
+}
+
+/* Elegant Arch & Card Frames */
+.arch-frame {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+.organic-card {
+  background: var(--color-paper-card);
+  border: 1px solid var(--color-border-card);
+  box-shadow: 0 10px 30px -10px oklch(50% 0.05 25 / 0.08),
+              0 2px 8px -2px oklch(50% 0.03 25 / 0.05);
+}
+
+.card-gold-glow {
+  box-shadow: 0 12px 35px -8px oklch(75% 0.1 75 / 0.15),
+              0 0 0 1px var(--color-border-gold);
+}
+
+/* Keyframe Animations */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(6px) rotate(-1.5deg);
+  }
+}
+
+@keyframes pulseHeart {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+}
+
+@keyframes fallPetal {
+  0% {
+    transform: translate3d(0, -10px, 0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate3d(60px, 100vh, 0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmerGlow {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 7s ease-in-out infinite;
+}
+
+.animate-pulse-heart {
+  animation: pulseHeart 2.2s ease-in-out infinite;
+}
+
+.petal-particle {
+  position: fixed;
+  top: -20px;
+  pointer-events: none;
+  z-index: 10;
+  animation: fallPetal linear infinite;
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .petal-particle {
+    display: none !important;
+  }
 }
