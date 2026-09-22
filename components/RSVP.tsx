@@ -16,7 +16,10 @@ export default function RSVP() {
       rsvp.whatsappNumber !== "REPLACE_WITH_NUMBER" &&
       rsvp.whatsappNumber.trim() !== ""
     ) {
-      const cleanNumber = rsvp.whatsappNumber.replace(/[^0-9]/g, "");
+      let cleanNumber = rsvp.whatsappNumber.replace(/[^0-9]/g, "");
+      if (cleanNumber.length === 10) {
+        cleanNumber = `91${cleanNumber}`;
+      }
       return `https://wa.me/${cleanNumber}?text=${encoded}`;
     }
     // Generic WhatsApp share that lets user select the recipient contact

@@ -47,7 +47,7 @@ export const INVITATION_CONFIG = {
     googleMapsUrl: "REPLACE_WITH_GOOGLE_MAPS_URL",
   },
   rsvp: {
-    whatsappNumber: "REPLACE_WITH_NUMBER",
+    whatsappNumber: "919500760734",
     acceptMessage:
       "Hi Arun & Kiruthika! ❤️ I would love to join you for the Baby Shower on 25 September 2026. Wishing you both lots of happiness and blessings! 👶🌸",
     wishesMessage:
@@ -56,9 +56,6 @@ export const INVITATION_CONFIG = {
   media: {
     couplePhoto: "/images/couple.jpg",
     fullCard: "/images/invitation-card.png",
-    teddy: "/images/teddy.png",
-    shoes: "/images/baby-shoes.png",
-    blocks: "/images/baby-blocks.png",
     audio: "/audio/baby-shower.mp3",
   },
 };

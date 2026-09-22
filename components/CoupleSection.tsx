@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { INVITATION_CONFIG } from "@/config/invitation";
-import { Eye } from "lucide-react";
+import { Eye, Sparkles, Star, Heart } from "lucide-react";
 
 export default function CoupleSection() {
   const { couple, media } = INVITATION_CONFIG;
@@ -41,7 +41,7 @@ export default function CoupleSection() {
 
           {/* Floating 'Baby on the way ♡' badge at bottom corner */}
           <div className="absolute bottom-3 left-3 z-10 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-2xl border border-[#BE3455]/20 shadow-md flex items-center gap-1.5 animate-float-gentle">
-            <span className="text-xs">🧸</span>
+            <span className="text-sm">👶</span>
             <span className="font-script text-lg text-[#BE3455] leading-none pt-0.5">
               Baby on the way ♡
             </span>
@@ -58,52 +58,34 @@ export default function CoupleSection() {
           </button>
         </div>
 
-        {/* Accompanying Baby Shower Keepsakes (Teddy, Shoes, Blocks) */}
-        <div className="flex items-center justify-around px-4 mt-6">
-          {/* Teddy with pink bow */}
-          <div className="flex flex-col items-center">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 relative transition-transform duration-300 hover:scale-110">
-              <Image
-                src={media.teddy}
-                alt="Teddy Bear"
-                fill
-                sizes="(max-width: 640px) 64px, 80px"
-                className="object-contain drop-shadow-md"
-              />
+        {/* Elegant Handcrafted Icon Badges (Replaced Broken Image Crops) */}
+        <div className="grid grid-cols-3 gap-3 px-2 mt-6">
+          {/* Tiny Blessings */}
+          <div className="flex flex-col items-center text-center p-3 rounded-2xl bg-white/80 border border-[#BE3455]/15 shadow-xs transition-transform duration-300 hover:-translate-y-1 hover:shadow-md">
+            <div className="w-12 h-12 rounded-full bg-[#FCEBE8] text-[#BE3455] flex items-center justify-center mb-2 shadow-xs">
+              <Sparkles className="w-5 h-5" />
             </div>
-            <span className="text-[10px] tracking-wider uppercase text-[#382B2A]/60 mt-1 font-medium">
+            <span className="text-[11px] font-bold tracking-wider uppercase text-[#BE3455]">
               Tiny Blessings
             </span>
           </div>
 
-          {/* Pink baby booties */}
-          <div className="flex flex-col items-center">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 relative transition-transform duration-300 hover:scale-110">
-              <Image
-                src={media.shoes}
-                alt="Pink Baby Booties"
-                fill
-                sizes="(max-width: 640px) 64px, 80px"
-                className="object-contain drop-shadow-md"
-              />
+          {/* Little Feet */}
+          <div className="flex flex-col items-center text-center p-3 rounded-2xl bg-white/80 border border-[#4A7A9E]/15 shadow-xs transition-transform duration-300 hover:-translate-y-1 hover:shadow-md">
+            <div className="w-12 h-12 rounded-full bg-[#E8F3FA] text-[#4A7A9E] flex items-center justify-center mb-2 shadow-xs text-xl">
+              👣
             </div>
-            <span className="text-[10px] tracking-wider uppercase text-[#382B2A]/60 mt-1 font-medium">
+            <span className="text-[11px] font-bold tracking-wider uppercase text-[#4A7A9E]">
               Little Feet
             </span>
           </div>
 
-          {/* Baby alphabet blocks */}
-          <div className="flex flex-col items-center">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 relative transition-transform duration-300 hover:scale-110">
-              <Image
-                src={media.blocks}
-                alt="BABY alphabet wooden blocks"
-                fill
-                sizes="(max-width: 640px) 64px, 80px"
-                className="object-contain drop-shadow-md"
-              />
+          {/* Big Dreams */}
+          <div className="flex flex-col items-center text-center p-3 rounded-2xl bg-white/80 border border-[#D4AF37]/25 shadow-xs transition-transform duration-300 hover:-translate-y-1 hover:shadow-md">
+            <div className="w-12 h-12 rounded-full bg-[#FCF7E8] text-[#B8860B] flex items-center justify-center mb-2 shadow-xs">
+              <Star className="w-5 h-5 fill-[#B8860B]" />
             </div>
-            <span className="text-[10px] tracking-wider uppercase text-[#382B2A]/60 mt-1 font-medium">
+            <span className="text-[11px] font-bold tracking-wider uppercase text-[#B8860B]">
               Big Dreams
             </span>
           </div>

@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { INVITATION_CONFIG } from "@/config/invitation";
-import { Heart } from "lucide-react";
+import { Heart, Sparkles } from "lucide-react";
 
 export default function SpecialMessage() {
   const { additionalQuote } = INVITATION_CONFIG.event;
@@ -50,20 +49,16 @@ export default function SpecialMessage() {
           </p>
         </blockquote>
 
-        {/* Baby Blocks Showcase */}
-        <div className="mt-6 flex justify-center items-center">
-          <div className="w-28 h-14 relative transition-transform duration-300 hover:scale-105">
-            <Image
-              src={INVITATION_CONFIG.media.blocks}
-              alt="BABY blocks"
-              fill
-              sizes="112px"
-              className="object-contain drop-shadow-sm"
-            />
-          </div>
+        {/* Elegant Botanical Flourish (Replacing broken crop) */}
+        <div className="mt-6 flex items-center justify-center gap-3 text-[#D4AF37]">
+          <span className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-[#D4AF37]" />
+          <Sparkles className="w-4 h-4 text-[#D4AF37]" />
+          <span className="text-base select-none">🌸</span>
+          <Sparkles className="w-4 h-4 text-[#D4AF37]" />
+          <span className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#D4AF37]" />
         </div>
 
-        <p className="font-serif-cormorant italic text-sm sm:text-base text-[#382B2A]/70 mt-3 max-w-sm mx-auto">
+        <p className="font-serif-cormorant italic text-sm sm:text-base text-[#382B2A]/75 mt-3 max-w-sm mx-auto">
           May the tiny giggles of today become the brightest dreams of tomorrow.
         </p>
       </div>
